@@ -6,10 +6,12 @@ function generatePassword(){
   var charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+';
   var passwordLength = 8;
   var password = '';
-}
 
-for (var i = 0; i <passwordLength; i++){
-  var random = 
+
+for (var i = 0; i < passwordLength; i++){
+  var random = Math.floor(Math.random() *charset.length);
+  password += charset[random];
+}
 }
 
 // Write password to the #password input
