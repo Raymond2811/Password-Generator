@@ -1,17 +1,21 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
 function generatePassword(){
-  var charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+';
-  var passwordLength = 8;
+  var charset = ''
+
+  var passwordLength = parseInt(prompt('Enter password length (between 8 and 128):'))
+  if (isNaN (passwordLength) || passwordLength < 8 || passwordLength >128 ) {
+    alert('Please enter a valid number between 8 and 128');
+    return '';
+  }
+
   var password = '';
-
-
-for (var i = 0; i < passwordLength; i++){
-  var random = Math.floor(Math.random() *charset.length);
-  password += charset[random];
-}
+  for (var i = 0; i < passwordLength; i++){
+    var random = Math.floor(Math.random() *charset.length);
+    password += charset[random];
+  }
+  return password;
 }
 
 // Write password to the #password input
