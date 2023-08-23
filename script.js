@@ -10,6 +10,32 @@ function generatePassword(){
     return '';
   }
 
+  var useLowercase = confirm('Do you want to include lowercase letters?');
+  if (useLowercase){
+    charset += "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  var useUpperCase = confirm('Do you want to include upcase?');
+  if (useUpperCase){
+    charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+
+  var useNumbers = confirm('Do you want to include numbers?');
+  if (useNumbers){
+    charset += '0123456789';
+  }
+
+  var useSpecialChars = confirm('Do you want to include special characters?');
+  if (useSpecialChars) {
+    charset += "!@#$%^&*()-_=+";
+  }
+
+  if (charset === ''){
+    alert('You must select at least one character type!');
+    return '';
+  }
+
+
   var password = '';
   for (var i = 0; i < passwordLength; i++){
     var random = Math.floor(Math.random() *charset.length);
