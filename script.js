@@ -1,31 +1,31 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-  var charset = ''
+  let charset = ''
 
-  var passwordLength = parseInt(prompt('Enter password length (between 8 and 128):'))
+  const passwordLength = parseInt(prompt('Enter password length (between 8 and 128):'))
   if (isNaN (passwordLength) || passwordLength < 8 || passwordLength >128 ) {
     alert('Please enter a valid number between 8 and 128');
     return '';
   }
 
-  var useLowercase = confirm('Do you want to include lowercase letters?');
+  const useLowercase = confirm('Do you want to include lowercase letters?');
   if (useLowercase){
     charset += "abcdefghijklmnopqrstuvwxyz";
   }
 
-  var useUpperCase = confirm('Do you want to include upcase?');
+  const useUpperCase = confirm('Do you want to include upcase?');
   if (useUpperCase){
     charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
-  var useNumbers = confirm('Do you want to include numbers?');
+  const useNumbers = confirm('Do you want to include numbers?');
   if (useNumbers){
     charset += '0123456789';
   }
 
-  var useSpecialChars = confirm('Do you want to include special characters?');
+  const useSpecialChars = confirm('Do you want to include special characters?');
   if (useSpecialChars) {
     charset += "!@#$%^&*()-_=+";
   }
@@ -36,9 +36,9 @@ function generatePassword(){
   }
 
 
-  var password = '';
-  for (var i = 0; i < passwordLength; i++){
-    var random = Math.floor(Math.random() *charset.length);
+  let password = '';
+  for (let i = 0; i < passwordLength; i++){
+    let random = Math.floor(Math.random() *charset.length);
     password += charset[random];
   }
   return password;
@@ -46,8 +46,8 @@ function generatePassword(){
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
