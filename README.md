@@ -15,13 +15,13 @@ Essentially, this index number indicates the specific character the computer sho
 
 EX: let random = Math.floor(Math.random() *charset.length);
 
+https://raymond2811.github.io/SimplePassGen/
+
 ## Usage
 
 This website has only one use and that is to generate a password based on the criteria you've selected.
 
- create an `assets/images` 
-
-![alt text](assets/images/screenshot.png)
+assets/images/SimplePassGen.png
 
 ## License
 
